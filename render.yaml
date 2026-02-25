@@ -1,7 +1,9 @@
 services:
   - type: web
-    name: tg-downloader
+    name: yt-video-server
     env: python
-    buildCommand: pip install -r requirements.txt
+    buildCommand: |
+      pip install -r requirements.txt
+      apt-get update && apt-get install -y ffmpeg
     startCommand: python bot.py
     
